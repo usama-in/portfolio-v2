@@ -20,7 +20,7 @@ const AnimatedBackground: React.FC = () => {
     window.addEventListener("resize", resizeCanvas);
 
     // Particle system
-    const particles: ArrayArrayArrayArrayArrayArrayArrayArrayArrayArrayArrayArrayArrayArray<{
+    const particles: Array<{
       x: number;
       y: number;
       vx: number;
