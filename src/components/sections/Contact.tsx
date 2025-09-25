@@ -17,10 +17,9 @@ const Contact: React.FC = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] =
-    useState<"idle" | "success" | "error">(
-      "idle"
-    );
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,9 +46,7 @@ const Contact: React.FC = () => {
   }, []);
 
   const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -79,19 +76,19 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "john.doe@example.com",
-      href: "mailto:john.doe@example.com",
+      value: "ser.musama@gmail.com",
+      href: "mailto:ser.musama@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+92 302 5059077",
+      href: "tel:+923025059077",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Lahore, Pakistan",
       href: "https://maps.google.com",
     },
   ];

@@ -31,117 +31,76 @@ const Projects: React.FC = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Customer Support & E-Commerce Platform",
       description:
-        "Full-stack e-commerce solution with advanced features like real-time inventory, payment processing, and admin dashboard.",
+        "Developed a responsive front-end interface using React.js, focused on user experience and performance with real-time chat and order management.",
       image: "/api/placeholder/400/250",
       category: "Full Stack",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
+      technologies: ["React.js", "Stripe API", "TailwindCSS"],
       features: [
-        "Real-time inventory",
-        "Payment processing",
-        "Admin dashboard",
-        "Mobile responsive",
+        "Real-time chat interfaces (1-on-1 and group)",
+        "Secure user authentication screens",
+        "Order management views with Stripe checkout",
+        "Comprehensive dashboard with user activity",
       ],
-      github: "https://github.com",
-      live: "https://demo.com",
+      github: "https://github.com/musama",
+      live: "https://assist-kappa.vercel.app",
       status: "Completed",
     },
     {
-      title: "Task Management App",
+      title: "Company Website",
       description:
-        "Collaborative task management application with real-time updates, team collaboration, and advanced project tracking.",
+        "Developed a modern, high-performance company website using Next.js and TypeScript for robust and scalable architecture with advanced animations.",
       image: "/api/placeholder/400/250",
       category: "Frontend",
-      technologies: ["React", "TypeScript", "Socket.io", "Material-UI"],
+      technologies: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
       features: [
-        "Real-time collaboration",
-        "Drag & drop",
-        "Team management",
-        "Progress tracking",
+        "Modern, high-performance design",
+        "Advanced animations with Framer Motion",
+        "Responsive design across devices",
+        "TypeScript for robust architecture",
       ],
-      github: "https://github.com",
+      github: "https://github.com/musama",
+      live: "https://upmotion-v2.vercel.app",
+      status: "Completed",
+    },
+    {
+      title: "Ads Campaign Portal",
+      description:
+        "Integrated REST APIs into a static HTML-based portal using vanilla JavaScript and DOM manipulation with dynamic admin and user panels.",
+      image: "/api/placeholder/400/250",
+      category: "Frontend",
+      technologies: ["JavaScript", "HTML5", "CSS3", "REST APIs"],
+      features: [
+        "Dynamic admin and user panels",
+        "Campaign creation and media uploads",
+        "Approval workflows",
+        "Manual state management",
+      ],
+      github: "https://github.com/musama",
       live: "https://demo.com",
       status: "Completed",
     },
     {
-      title: "Weather Analytics Dashboard",
+      title: "Ali Zafar Foundation Website",
       description:
-        "Data visualization dashboard for weather analytics with interactive charts, forecasting, and location-based insights.",
+        "Developed and launched a full-featured charity website using WordPress, tailored to the foundation's branding and mission with secure donation system.",
       image: "/api/placeholder/400/250",
-      category: "Data Visualization",
-      technologies: ["Vue.js", "D3.js", "Python", "FastAPI", "MongoDB"],
+      category: "WordPress",
+      technologies: ["WordPress", "WooCommerce", "Custom Plugin Integration"],
       features: [
-        "Interactive charts",
-        "Weather forecasting",
-        "Location tracking",
-        "Data export",
+        "Secure online donation system",
+        "WooCommerce integration",
+        "Bank-provided payment plugin",
+        "Mobile responsive design",
       ],
-      github: "https://github.com",
-      live: "https://demo.com",
-      status: "Completed",
-    },
-    {
-      title: "Mobile Banking App",
-      description:
-        "Secure mobile banking application with biometric authentication, transaction history, and budget tracking.",
-      image: "/api/placeholder/400/250",
-      category: "Mobile",
-      technologies: ["React Native", "Firebase", "Biometric Auth", "Redux"],
-      features: [
-        "Biometric login",
-        "Transaction history",
-        "Budget tracking",
-        "Push notifications",
-      ],
-      github: "https://github.com",
-      live: "https://demo.com",
-      status: "In Progress",
-    },
-    {
-      title: "AI Content Generator",
-      description:
-        "AI-powered content generation tool with multiple templates, SEO optimization, and collaborative editing features.",
-      image: "/api/placeholder/400/250",
-      category: "AI/ML",
-      technologies: ["Next.js", "OpenAI API", "Prisma", "Tailwind CSS"],
-      features: [
-        "AI content generation",
-        "SEO optimization",
-        "Template library",
-        "Collaborative editing",
-      ],
-      github: "https://github.com",
-      live: "https://demo.com",
-      status: "Completed",
-    },
-    {
-      title: "Social Media Dashboard",
-      description:
-        "Comprehensive social media management dashboard with analytics, scheduling, and multi-platform integration.",
-      image: "/api/placeholder/400/250",
-      category: "Full Stack",
-      technologies: ["React", "Express.js", "Chart.js", "Social APIs"],
-      features: [
-        "Multi-platform support",
-        "Analytics dashboard",
-        "Post scheduling",
-        "Team collaboration",
-      ],
-      github: "https://github.com",
-      live: "https://demo.com",
+      github: "https://github.com/musama",
+      live: "https://www.alizafarfoundation.org/",
       status: "Completed",
     },
   ];
 
-  const categories = [
-    "All",
-    "Full Stack",
-    "Frontend",
-    "Mobile",
-    "Data Visualization",
-    "AI/ML",
-  ];
+  const categories = ["All", "Full Stack", "Frontend", "WordPress"];
 
   const filteredProjects =
     activeFilter === "All"
@@ -195,7 +154,7 @@ const Projects: React.FC = () => {
               key={project.title}
               className={`group bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 hover-lift hover-glow reveal animate-scale-in stagger-${
                 (index % 6) + 1
-              }`}
+              } flex flex-col h-full`}
             >
               {/* Project Image */}
               <div className="relative overflow-hidden">
@@ -233,7 +192,7 @@ const Projects: React.FC = () => {
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 {/* Title and Category */}
                 <div className="mb-3">
                   <h3 className="text-xl font-bold text-white mb-1">
@@ -268,7 +227,7 @@ const Projects: React.FC = () => {
                 </div>
 
                 {/* Technologies */}
-                <div className="mb-4">
+                <div className="mb-6 flex-grow">
                   <div className="flex flex-wrap gap-1">
                     {project.technologies.map((tech, techIndex) => (
                       <span
@@ -282,8 +241,7 @@ const Projects: React.FC = () => {
                 </div>
 
                 {/* Action Buttons */}
-
-                <div className="flex space-x-3">
+                <div className="flex space-x-3 mt-auto">
                   <a
                     href={project.live}
                     className="flex-1 flex items-center justify-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 text-sm font-medium"

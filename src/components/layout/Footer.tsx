@@ -9,10 +9,14 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:john.doe@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/musama", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://linkedin.com/in/musama",
+      label: "LinkedIn",
+    },
+    { icon: Twitter, href: "https://twitter.com/musama", label: "Twitter" },
+    { icon: Mail, href: "mailto:ser.musama@gmail.com", label: "Email" },
   ];
 
   const quickLinks = [
@@ -40,12 +44,12 @@ const Footer: React.FC = () => {
           <div className="md:col-span-2">
             <div className="mb-6">
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                John Doe
+                Muhammad Usama
               </h3>
               <p className="text-slate-400 leading-relaxed max-w-md">
-                Full Stack Developer passionate about creating exceptional
-                digital experiences through clean code, innovative design, and
-                cutting-edge technologies.
+                Front-End Developer with hands-on experience building responsive
+                and user-friendly web interfaces using React.js and modern
+                technologies.
               </p>
             </div>
 
@@ -94,24 +98,24 @@ const Footer: React.FC = () => {
               <div className="text-slate-400">
                 <p className="text-sm">Email</p>
                 <a
-                  href="mailto:john.doe@example.com"
+                  href="mailto:ser.musama@gmail.com"
                   className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
                 >
-                  john.doe@example.com
+                  ser.musama@gmail.com
                 </a>
               </div>
               <div className="text-slate-400">
                 <p className="text-sm">Phone</p>
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+923025059077"
                   className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
                 >
-                  +1 (555) 123-4567
+                  +92 302 5059077
                 </a>
               </div>
               <div className="text-slate-400">
                 <p className="text-sm">Location</p>
-                <span>San Francisco, CA</span>
+                <span>Lahore, Pakistan</span>
               </div>
             </div>
           </div>
@@ -122,7 +126,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="flex items-center space-x-2 text-slate-400 text-sm">
-              <span>© {currentYear} John Doe. Made with</span>
+              <span>© {currentYear} Muhammad Usama. Made with</span>
               <Heart className="text-red-400 animate-pulse" size={16} />
               <span>and lots of coffee</span>
             </div>
@@ -147,7 +151,7 @@ const Footer: React.FC = () => {
       ></div>
 
       {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div
           className="absolute inset-0"
           style={{

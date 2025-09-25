@@ -14,7 +14,7 @@ import "./index.css";
 
 const App: React.FC = () => {
   return (
-    <div className="relative  min-h-screen bg-slate-950 text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-slate-950 text-white w-full overflow-x-hidden">
       <AnimatedBackground />
       <Header />
       <main className="relative z-10">
