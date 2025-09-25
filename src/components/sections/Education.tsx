@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { GraduationCap, Calendar, MapPin } from 'lucide-react';
+import React, { useEffect, useRef } from "react";
+import { GraduationCap, Calendar, MapPin } from "lucide-react";
 
 const Education: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -9,10 +9,10 @@ const Education: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const elements = entry.target.querySelectorAll('.reveal');
+            const elements = entry.target.querySelectorAll(".reveal");
             elements.forEach((el, index) => {
               setTimeout(() => {
-                el.classList.add('active');
+                el.classList.add("active");
               }, index * 100);
             });
           }
@@ -30,31 +30,34 @@ const Education: React.FC = () => {
 
   const educationData = [
     {
-      degree: 'Master of Computer Science',
-      institution: 'Stanford University',
-      location: 'Stanford, CA',
-      period: '2020 - 2022',
-      gpa: '3.9/4.0',
-      description: 'Specialized in Machine Learning and Software Engineering. Completed thesis on distributed systems optimization.',
+      degree: "BS Computer Science",
+      institution: "University of Sargodha",
+      location: "Sargodha, Pakistan",
+      period: "2016 - 2020",
+      gpa: "3.7/4.0",
+      description:
+        "Comprehensive study of computer science fundamentals, software development, algorithms, and system design with focus on web technologies and programming languages.",
       achievements: [
-        'Dean\'s List for 4 consecutive semesters',
-        'Graduate Research Assistant',
-        'Published 2 papers in IEEE conferences'
-      ]
+        "Completed 4-year comprehensive CS program",
+        "Strong foundation in programming and algorithms",
+        "Hands-on experience with multiple programming languages",
+      ],
     },
     {
-      degree: 'Bachelor of Software Engineering',
-      institution: 'University of California, Berkeley',
-      location: 'Berkeley, CA',
-      period: '2016 - 2020',
-      gpa: '3.8/4.0',
-      description: 'Comprehensive study of software development, algorithms, and system design with focus on web technologies.',
+      degree: "AWS Certified Solutions Architect - Associate",
+      institution: "Amazon Web Services",
+      location: "Online",
+      period: "Valid until: 06/06/2027",
+      gpa: "Validation Number: 9cc4e657618447ec89ee2513b62839dd",
+      description:
+        "Certified in designing distributed systems on AWS platform. Demonstrated ability to design and deploy scalable, highly available, and fault-tolerant systems.",
       achievements: [
-        'Summa Cum Laude graduate',
-        'President of Computer Science Society',
-        'Winner of Annual Hackathon 2019'
-      ]
-    }
+        "AWS Certified Solutions Architect - Associate",
+        "Validation Number: 9cc4e657618447ec89ee2513b62839dd",
+        "Validate At: https://aws.amazon.com/verification",
+        "Valid until: 06/06/2027",
+      ],
+    },
   ];
 
   return (
@@ -70,24 +73,13 @@ const Education: React.FC = () => {
           </p>
         </div>
 
-        {/* Education Timeline */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-purple-400"></div>
-
+        {/* Education Cards */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
             {educationData.map((edu, index) => (
-              <div
-                key={index}
-                className={`relative mb-12 reveal ${
-                  index % 2 === 0 ? 'md:pr-1/2 md:text-right' : 'md:pl-1/2 md:ml-8'
-                }`}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-900 animate-pulse-glow"></div>
-
+              <div key={index} className="reveal">
                 {/* Education Card */}
-                <div className="ml-16 md:ml-0 bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover-lift hover-glow">
+                <div className="h-full bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover-lift hover-glow">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center space-x-3">
@@ -95,8 +87,12 @@ const Education: React.FC = () => {
                         <GraduationCap className="text-blue-400" size={24} />
                       </div>
                       <div>
-                                                <h3 className="text-xl font-bold text-white">{edu.degree}</h3>
-                        <p className="text-blue-400 font-semibold">{edu.institution}</p>
+                        <h3 className="text-xl font-bold text-white">
+                          {edu.degree}
+                        </h3>
+                        <p className="text-blue-400 font-semibold">
+                          {edu.institution}
+                        </p>
                       </div>
                     </div>
                     <div className="text-right text-sm text-slate-400">
@@ -113,7 +109,7 @@ const Education: React.FC = () => {
 
                   {/* GPA */}
                   <div className="mb-4">
-                                                    <span className="inline-block px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold">
+                    <span className="inline-block px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold">
                       GPA: {edu.gpa}
                     </span>
                   </div>
@@ -125,10 +121,15 @@ const Education: React.FC = () => {
 
                   {/* Achievements */}
                   <div>
-                    <h4 className="text-white font-semibold mb-2">Key Achievements:</h4>
-                        <ul className="space-y-1">
+                    <h4 className="text-white font-semibold mb-2">
+                      Key Achievements:
+                    </h4>
+                    <ul className="space-y-1">
                       {edu.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="text-slate-400 text-sm flex items-center">
+                        <li
+                          key={achIndex}
+                          className="text-slate-400 text-sm flex items-center"
+                        >
                           <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
                           {achievement}
                         </li>
@@ -144,16 +145,20 @@ const Education: React.FC = () => {
         {/* Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
           {[
-            { label: 'Years of Study', value: '6+' },
-            { label: 'GPA Average', value: '3.85' },
-            { label: 'Research Papers', value: '2' },
-            { label: 'Academic Awards', value: '5' }
+            { label: "Years of Study", value: "6+" },
+            { label: "GPA Average", value: "3.85" },
+            { label: "Research Papers", value: "2" },
+            { label: "Academic Awards", value: "5" },
           ].map((stat, index) => (
             <div
               key={index}
-              className={`text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700/30 hover-lift animate-scale-in stagger-${index + 1}`}
+              className={`text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700/30 hover-lift animate-scale-in stagger-${
+                index + 1
+              }`}
             >
-              <div className="text-3xl font-bold text-blue-400 mb-2">{stat.value}</div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">
+                {stat.value}
+              </div>
               <div className="text-slate-400 text-sm">{stat.label}</div>
             </div>
           ))}
@@ -162,7 +167,10 @@ const Education: React.FC = () => {
 
       {/* Background Elements */}
       <div className="absolute top-20 right-10 w-32 h-32 bg-blue-500/5 rounded-full animate-float"></div>
-      <div className="absolute bottom-20 left-10 w-24 h-24 bg-purple-500/5 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+      <div
+        className="absolute bottom-20 left-10 w-24 h-24 bg-purple-500/5 rounded-full animate-float"
+        style={{ animationDelay: "3s" }}
+      ></div>
     </section>
   );
 };

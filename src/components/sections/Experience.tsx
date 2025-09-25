@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
+import { Briefcase, MapPin, ExternalLink } from "lucide-react";
 
 const Experience: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -30,72 +30,75 @@ const Experience: React.FC = () => {
 
   const experiences = [
     {
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
-      type: "Full-time",
-      description:
-        "Leading development of scalable web applications serving 100K+ users. Architected microservices infrastructure and mentored junior developers.",
-      achievements: [
-        "Reduced application load time by 40% through optimization",
-        "Led team of 5 developers on major product redesign",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
-        "Increased test coverage from 60% to 95%",
-      ],
-      technologies: [
-        "React",
-        "Node.js",
-        "TypeScript",
-        "AWS",
-        "Docker",
-        "PostgreSQL",
-      ],
-    },
-    {
-      title: "Full Stack Developer",
-      company: "StartupXYZ",
+      title: "Front End Developer",
+      company: "Upmotion Tech",
       location: "Remote",
-      period: "2021 - 2022",
+      period: "Dec 2024 - Present",
       type: "Full-time",
       description:
-        "Developed MVP for fintech startup from ground up. Built responsive web applications and RESTful APIs handling financial transactions.",
+        "Developing responsive web applications using React.js and Next.js. Building clean, mobile-first UIs with modern technologies and best practices.",
       achievements: [
-        "Built entire frontend application in React with TypeScript",
-        "Designed and implemented secure payment processing system",
-        "Achieved 99.9% uptime for critical financial services",
-        "Collaborated with design team to create intuitive UX",
+        "Developed responsive web applications using React.js and Next.js",
+        "Styled components with Tailwind CSS and styled-components for clean, mobile-first UIs",
+        "Integrated REST APIs, including Firebase Realtime Database",
+        "Built admin panels with role-based access, authentication, and protected routes",
+        "Worked with Redux Toolkit and Context API for state management",
+        "Focused on reusable components, performance optimization, and clean code practices",
       ],
       technologies: [
-        "React",
-        "Express.js",
-        "MongoDB",
-        "Stripe API",
-        "JWT",
-        "Material-UI",
+        "React.js",
+        "Next.js",
+        "Tailwind CSS",
+        "Styled Components",
+        "Redux Toolkit",
+        "Firebase",
       ],
     },
     {
-      title: "Frontend Developer Intern",
-      company: "Digital Agency Pro",
-      location: "New York, NY",
-      period: "2020 - 2021",
+      title: "Front End Intern",
+      company: "Xovolt Technologies",
+      location: "Remote",
+      period: "July 2024 - Nov 2024",
       type: "Internship",
       description:
-        "Contributed to client projects building responsive websites and web applications. Gained experience in modern frontend frameworks and design systems.",
+        "Assisted in developing UI components using React.js and modern JavaScript. Gained hands-on experience with responsive layouts and API integration.",
       achievements: [
-        "Delivered 8 client projects on time and within budget",
-        "Improved website performance scores by average of 25%",
-        "Created reusable component library for team",
-        "Received outstanding intern performance review",
+        "Assisted in developing UI components using React.js and modern JavaScript (ES6+)",
+        "Collaborated on responsive layouts with Tailwind CSS and styled-components",
+        "Supported integration of REST APIs and helped test frontend-backend connectivity",
+        "Gained experience with React Router and basic state management using Context API",
       ],
       technologies: [
-        "Vue.js",
-        "Sass",
-        "Webpack",
-        "Figma",
-        "Git",
-        "Responsive Design",
+        "React.js",
+        "JavaScript ES6+",
+        "Tailwind CSS",
+        "Styled Components",
+        "React Router",
+        "Context API",
+      ],
+    },
+    {
+      title: "WordPress Website Developer",
+      company: "Brik Solutions",
+      location: "Remote",
+      period: "Feb 2021 - March 2022",
+      type: "Full-time",
+      description:
+        "Developed and customized WordPress websites using premium themes and page builders. Ensured responsive design and performance optimization across multiple sites.",
+      achievements: [
+        "Developed and customized WordPress websites using premium themes, page builders (Elementor, WPBakery), and custom code (HTML, CSS, JS)",
+        "Implemented and configured plugins for SEO, performance optimization, security, and form handling",
+        "Modified existing themes and created custom templates to meet client or project requirements",
+        "Ensured responsive design, cross-browser compatibility, and optimized site speed",
+        "Performed regular maintenance, updates, and troubleshooting across multiple WordPress sites",
+      ],
+      technologies: [
+        "WordPress",
+        "Elementor",
+        "WPBakery",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
       ],
     },
   ];
@@ -124,27 +127,29 @@ const Experience: React.FC = () => {
             <div key={index} className="relative mb-12 reveal">
               {/* Timeline connector */}
               {index < experiences.length - 1 && (
-                <div className="absolute left-8 top-20 w-0.5 h-32 bg-gradient-to-b from-blue-400 to-transparent"></div>
+                <div className="absolute left-14 top-32 w-0.5 h-40 bg-gradient-to-b from-blue-400 to-transparent"></div>
               )}
 
               <div className="flex flex-col md:flex-row gap-6">
                 {/* Timeline dot and period */}
-                <div className="flex-shrink-0 flex items-start">
-                  <div className="flex flex-col items-center">
+                <div className="flex-shrink-0 w-32 flex items-start">
+                  <div className="flex flex-col items-center w-full">
                     <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-pulse-glow">
                       <Briefcase className="text-white" size={24} />
                     </div>
-                    <div className="mt-4 text-center">
-                      <div className="text-blue-400 font-semibold text-sm">
+                    <div className="mt-4 text-center w-full">
+                      <div className="text-blue-400 font-semibold text-sm break-words">
                         {exp.period}
                       </div>
-                      <div className="text-slate-500 text-xs">{exp.type}</div>
+                      <div className="text-slate-500 text-xs break-words">
+                        {exp.type}
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Experience Card */}
-                <div className="flex-1 bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover-lift hover-glow">
+                <div className="flex-1 h-full bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover-lift hover-glow">
                   {/* Header */}
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div>
@@ -174,7 +179,7 @@ const Experience: React.FC = () => {
                     <h4 className="text-white font-semibold mb-3">
                       Key Achievements:
                     </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 gap-2">
                       {exp.achievements.map((achievement, achIndex) => (
                         <div
                           key={achIndex}
